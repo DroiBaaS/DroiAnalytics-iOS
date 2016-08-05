@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "DroiAnalyticsSDK"
-s.version          = "0.0.2"
+s.version          = "0.0.3"
 s.summary          = "卓易统计分析"
 s.description      = "帮助开发者快速集成统计分析功能"
 s.homepage         = "https://github.com/DroiBaaS"

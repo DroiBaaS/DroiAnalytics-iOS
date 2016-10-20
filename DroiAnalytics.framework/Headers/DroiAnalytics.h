@@ -1,8 +1,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-
+@class CLLocation;
+#define DroiAnalyticsLog(...) [DroiAnalytics droiAnalyticsLog:[NSString stringWithFormat:__VA_ARGS__]]
 
 @interface DroiAnalytics : NSObject
 
@@ -46,10 +46,22 @@
 
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes num:(NSInteger)num;
 
-/**地位位置信息统计
+
+/**Log信息记录,会在Crash时将此次启动到Crash之间的Log信息上传 可以直接使用DroiAnalyticsLog(...)
+ */
++ (void)droiAnalyticsLog:(NSString *)log;
+
+
+/**
+ 地理位置信息统计
  */
 + (void)setLatitude:(double)latitude longitude:(double)longitude;
 
 + (void)setLocation:(CLLocation *)location;
+
+/**
+ 获取SDK版本
+ */
++ (NSString *)getVersion;
 
 @end
